@@ -1,0 +1,14 @@
+# for mac.
+.DS_Store
+
+# for others.
+*~
+doc/
+*.swp
+.project
+.idea
+.secret
+/.bundle
+
+# for ctags
+tags

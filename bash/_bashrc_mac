@@ -1,0 +1,89 @@
+######################################################################
+#    Last changes.
+#    14.10.2017.
+######################################################################
+
+#--------------------------------------------------------------------
+# Mac Parametas.
+
+#--------------------------------------------------------------------
+# mac pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#--------------------------------------------------------------------
+# Mac Environment.
+export PATH=$PATH:/sbin:/usr/sbin
+
+#--------------------------------------------------------------------
+# Application PATHes
+export PATH=$PATH:/usr/local/vpnclient
+
+#--------------------------------------------------------------------
+# Aliases
+# Useful comannds.
+
+# open commands prefixes.
+alias openf='open -a firefox'
+alias sc='screen'
+alias scs='screen -S'
+alias scl='screen -ls'
+alias scr='screen -r'
+
+# make
+alias mc='make clean'
+alias mk='make clean; clear; make'
+
+# My functions.
+# Simple memo(vim).
+mm(){
+	cd ~/ownCloud/memo && beh $1 && cd - >> /dev/null
+}
+
+beh(){
+	if [ $# = 0  ]; then
+		vim `date '+%Y%m%d-%w-%H%M'`.txt
+	else
+		vim $1
+	fi
+}
+
+# Open vim and markdown memo.
+md(){
+	cd ~/ownCloud/memo && beh_m $1 && cd - >> /dev/null
+}
+
+beh_m(){
+	if [ $# = 0  ]; then
+		vim `date '+%Y%m%d-%w-%H%M'`.md
+	else
+		vim $1
+	fi
+}
+
+# TeX compile
+tx(){
+	if [ $# -e 0 ];then
+		echo "Argument not found."
+	else
+		platex $1.tex
+		if [ -e .$1dvi  ];then	
+			dvipdfmx $1.dvi
+		fi
+	fi
+}
+
+# gnu screen remove
+scd(){
+	if [ $# = 0  ]; then
+		screen -r -X quit
+	else
+		screen -r $1 -X quit
+	fi
+}
+
+# less ssh config
+sshconf(){
+	less ~/.ssh/config
+}
