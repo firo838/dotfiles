@@ -2,7 +2,7 @@ autoload -U compinit
 compinit
 
 #prompt
-PROMPT='%n{4}-{4}%*{4} :%c{2} $ '
+PROMPT='$ '
 
 # —š—ğƒtƒ@ƒCƒ‹‚Ì•Û‘¶æ
 export HISTFILE=${HOME}/.zhistory
