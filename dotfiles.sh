@@ -21,13 +21,10 @@ function ch () {
 #ln -s ~/.dotfiles/muttrc ~/.muttrc
 #ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
-ch zprofile
 ch vimrc
 ch screenrc
 ch screen
 ch bashrc
 ch gitconfig
 ch gitignore_global
-ch muttrc
 ch tmux.conf
-ch w3m
