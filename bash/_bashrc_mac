@@ -87,3 +87,12 @@ scd(){
 sshconf(){
 	less ~/.ssh/config
 }
+
+# change name
+rename(){
+	if [ $# = 0 ];then
+		echo "The first argument is the original name, the second argument is the changed name."
+	else
+		for f in `ls`; do mv $f ${f/$1/$2}; done
+	fi
+}
