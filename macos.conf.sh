@@ -12,7 +12,7 @@ fi
 ###### Base ######
 # スタンバイまでの時間を24時間へ変更 (デフォルト1時間)
 # sudo pmset -a standbydelay 86400
-# ブート時のサウンドの無効化 (寂しい気もしますが煩いので消しています)
+# ブート時のサウンドの無効化
 sudo nvram SystemAudioVolume=" "
 # スクロールバーの常時表示
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
