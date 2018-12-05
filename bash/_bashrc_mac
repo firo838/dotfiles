@@ -13,8 +13,22 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 #--------------------------------------------------------------------
+# mac rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+#--------------------------------------------------------------------
 # Mac Environment.
 export PATH=$PATH:/sbin:/usr/sbin
+
+#--------------------------------------------------------------------
+# Arduino Dev Environment.
+export PATH=$PATH:/Applications/Arduino-1.8.1-for_emu.app/Contents/Java/hardware/tools/avr/bin
+export PATH=$PATH:/Users/rosev/Library/Arduino15/packages/arduino/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin
 
 #--------------------------------------------------------------------
 # Application PATHes
