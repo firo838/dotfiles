@@ -48,3 +48,16 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 ##### Finder #####
 # リモートファイルシステムにおいてDS_Storeを作成しない
 defaults write com.apple.desktopservices DSDontWriteNetworkStores True
+
+# 未確認のアプリケーションを実行する際のダイアログを無効にする
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Allow you to select and copy string in QuickLook （QuickLook で文字の選択、コピーを出来るようにする）
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# 新しいウィンドウでデフォルトでホームフォルダを開く
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/" 
+
+# Show the ~/Library directory （ライブラリディレクトリを表示、デフォルトは非表示）
+chflags nohidden ~/Library 
