@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## file exist check
-function ch () {
+function makeDotConfs () {
 	fn=".$1"
     if [ -e $fn ]; then
         echo "$1 Skipped."
@@ -11,20 +11,11 @@ function ch () {
     fi
 }
 
-#ln -s ~/.dotfiles/zprofile ~/.zprofile
-#ln -s ~/.dotfiles/vimrc ~/.vimrc
-#ln -s ~/.dotfiles/screenrc ~/.screenrc
-#ln -s ~/.dotfiles/screen ~/.screen
-#ln -s ~/.dotfiles/bashrc ~/.bashrc
-#ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-#ln -s ~/.dotfiles/gitignore_global ~/.gitignore_global
-#ln -s ~/.dotfiles/muttrc ~/.muttrc
-#ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
-ch vimrc
-ch screenrc
-ch screen
-ch bashrc
-ch gitconfig
-ch gitignore_global
-ch tmux.conf
+makeDotConfs vimrc
+makeDotConfs screenrc
+makeDotConfs screen
+makeDotConfs bashrc
+makeDotConfs gitconfig
+makeDotConfs gitignore_global
+makeDotConfs tmux.conf
