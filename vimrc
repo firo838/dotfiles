@@ -180,3 +180,12 @@ augroup ctags
   autocmd!
   autocmd BufWritePost * call s:execute_ctags()
 augroup END
+
+"*************************************************************************
+"undo history
+"mkdir -p ~/.vim/und
+"*************************************************************************
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
